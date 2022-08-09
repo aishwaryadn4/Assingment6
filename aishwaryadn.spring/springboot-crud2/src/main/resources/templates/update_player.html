@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<title> Player info</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<div class="container">
+
+		<hr>
+		<h2>Update book</h2>
+
+		<form action="#" th:action="@{/savePlayer}" th:object="${player}"
+			method="POST">
+
+
+             <input type ="hidden" th:field="*{id}" /> 
+        
+			<input type="text" th:field="*{name}" placeholder="book Name"
+				class="form-control mb-4 col-4"> <input type="text"
+				
+				th:field="*{country}" placeholder="author name"
+				class="form-control mb-4 col-4"> <input type="text"
+				
+				th:field="*{specialization}" placeholder="book id"
+				class="form-control mb-4 col-4">
+            
+            <button type="submit" class="btn btn-info col-2"> Save book</button>
+		</form>
+		<hr>
+		<a th:href="@{/}" class="btn btn-secondary"> Back to book List</a>
+
+	</div>
+
+</body>
+</html>

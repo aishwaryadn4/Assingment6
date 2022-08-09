@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Team Squad Info</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+
+<!-- <div class="bg-image" 
+     style="background-image: url('https://media.istockphoto.com/photos/cricket-cricket-stadium-picture-id641856978');
+              background-repeat:no-repeat"> -->
+
+	<div class="container my-2">
+	
+	
+	
+<!-- <div class="float-none"><h1 style="color:blue" > <bold>Cricket Sqard </bold> </h1></div><br> -->
+
+		<h1 style="color:blue">books List</h1>
+		
+
+		<table border="2" class="table table-striped table-dark">
+			<thead>
+				<tr>
+				 <!--    <th  style="color:blue">Number</th>  -->
+					<th  style="color:blue">Book Name</th>
+					<th style="color:blue">Author Name</th>
+					<th style="color:blue">book id</th>
+					<th style="color:blue">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="player:${listPlayers}">
+			<!-- 	    <td th:text="${player.id}"></td> -->
+					<td th:text="${player.name}"></td>
+					<td th:text="${player.country}"></td>
+					<td th:text="${player.specialization}"></td>
+					
+					<td><a th:href="@{/showFormForUpdate/{id}(id=${player.id})}" class="btn btn-secondary">Change </a>
+					<a th:href="@{/DeletePlayer/{id}(id=${player.id})}" class="btn btn-secondary">Remove  </a></td>
+				</tr>
+			</tbody>
+
+
+
+
+		</table>
+		
+		<a th:href="@{/showNewPlayerForm}"
+		class="btn btn-primary btn-lg btn-block"> Add Book</a>
+		
+		
+	</div>
+	
+</body>
+</html>
